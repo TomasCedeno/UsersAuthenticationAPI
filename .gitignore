@@ -161,4 +161,4 @@ cython_debug/
 
 
 #Database Cedentials
-db_credentials.json
+#db_credentials.json

@@ -5,19 +5,10 @@ from usersAPI.serializers.rol_serializer import RolSerializer
 from rest_framework import serializers
 
 class UserSerializer(serializers.ModelSerializer):
-    roles = RolSerializer(many=True)
+    roles = RolSerializer(many=True, read_only=True)
 
     class Meta:
         model = User
-        fields = ['id', 'email', 'name', 'lastName', 'roles']
-
-    def create(self, validated_data):
-        roles = validated_data.pop('roles')
-        user = User.objects.create(**validated_data)
-
-        for rol in roles:
-            Rol.objects.create(user=user, **rol)
-            
-        return user
+        fields = ['id', 'email', 'password', 'name', 'lastName', 'roles']
 
     

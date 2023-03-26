@@ -1,2 +1,3 @@
-from .user_view import UserCreateView
-from .user_view import UserDetailView
+from .user_views import UserCreateView, UserDetailUpdateDeleteView, AddRolToUserView, RemoveRolFromUserView
+from .rol_views import ListCreateRolView, DeleteRolView, AddPermissionToRolView, RemovePermissionFromRolView
+from .permission_views import ListCreatePermissionView, DeletePermissionView
